@@ -11,6 +11,7 @@
 
 
 const nameinput = document.querySelector("#name");
+const name2input = document.querySelector("#name2");
 const emailinput = document.querySelector("#email");
 const passwordinput = document.querySelector("#password");
 const repeatpassword = document.querySelector("#repeatpassword");
@@ -86,12 +87,14 @@ function onEmpty(inputElement, text) {
 }
 function showFieldEmptyMessage() {
     Show(isEmpty(nameinput), namefill);
+    Show(isEmpty(name2input), namefill);
     Show(isEmpty(emailinput), emailfill);
     Show(isEmpty(passwordinput), passwordfill);
     Show(isEmpty(phonenumber), phonenumberfill);
     Show(isEmpty(repeatpassword), repeatpasswordfill);
 }
 function hideFieldEmptyMessage() {
+    Show(false, namefill);
     Show(false, namefill);
     Show(false, emailfill);
     Show(false, passwordfill);
@@ -107,6 +110,8 @@ function checkIfInputEmptyandValid(event) {
     switch (0) {
         
         case nameinput.value.length: onEmpty(nameinput, "Please Enter your name");
+            break;
+        case name2input.value.length: onEmpty(name2input, "Please Enter your name");
             break;
         case emailinput.value.length: onEmpty(emailinput, "Please Enter your Email Id");
             break;
